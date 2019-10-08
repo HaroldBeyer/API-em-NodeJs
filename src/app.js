@@ -5,7 +5,7 @@ const app = express();
 const router = express.Router();
 // -------DEFINIÇÃO DE ROTAS ----------
 const indexRoute = require('./routes/index');
-const productRoute = require('./routes/product');
+const productRoute = require('./routes/product-route');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
