@@ -1,8 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 const router = express.Router();
+
+//Conexão ao banco
+mongoose.connect('mongodb+srv://haroldo:q64uWtGFRWQ8Vy8e@api-node-zwpyg.azure.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true });
+
 // -------DEFINIÇÃO DE ROTAS ----------
 const indexRoute = require('./routes/index');
 const productRoute = require('./routes/product-route');
