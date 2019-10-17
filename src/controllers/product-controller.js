@@ -23,6 +23,19 @@ exports.getById = (req, res, next) => {
     });
 };
 
+exports.getByTag = (req, res, next) => {
+  Product.find(
+    { tags: req.params.tag, active: true },
+    "title description price slug tags"
+  )
+    .then(data => {
+      res.status(200).send(data);
+    })
+    .catch(error => {
+      res.status(400).send(error);
+    });
+};
+
 exports.getBySlug = (req, res, next) => {
   Product.findOne(
     { slug: req.params.slug, active: true },

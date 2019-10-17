@@ -14,4 +14,6 @@ router.get("/:slug", controller.getBySlug);
 
 router.get("/admin/:id", controller.getById);
 
+router.get("/tags/:tag", controller.getByTag);
+
 module.exports = router;
